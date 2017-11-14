@@ -1,1 +1,1 @@
-# Dela-Dobra-UI-Kit-
+# UI Kit for Dela Dobra website

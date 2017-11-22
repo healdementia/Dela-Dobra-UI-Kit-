@@ -14,17 +14,13 @@ gulp.task("style", function() {
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(gulp.dest("css"))
+    .pipe(gulp.dest("."))
     .pipe(server.stream());
 });
 
 gulp.task("serve", ["style"], function() {
   server.init({
-    server: "." /* ,
-    notify: false,
-    open: true,
-    cors: true,
-    ui: false */
+    server: "."
   });
 
   gulp.watch("sass/**/*.scss", ["style"]);

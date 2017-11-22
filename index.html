@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Дела Добра - User Interface Kit</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <script>
       document.createElement( "picture" );
@@ -14,15 +14,237 @@
   </head>
 
   <body>
+    <div class="container">
+      <section class="page-nav">
+        <button class="login" id="login" type="button">Войти</button>
+      </section>
+    </div>
 
-    <section class="controls">
-      <form class="controls__form">
-        <input class="controls__input" placeholder="Электронная почта">
-        <input class="controls__input controls__input--error" value="admin.gmail.com">
-        <input class="controls__input controls__input--success" value="admin@gmail.com">
-        <input class="controls__input controls__input--disabled" value="admin@gmail.com">
+    <div class="container">
+
+      <section class="page-main">
+        <h1>Основной контент</h1>
+      </section>
+      <aside class="page-sidebar">
+
+        <section class="filter">
+          <h5 class="small-headline filter__headline">Фильтр проектов</h5>
+          <!-- ............ ФИЛЬТР: начало ............ -->
+          <form class="plain-form" method="post">
+            <label class="plain-form__label" for="company-type">Тип организации</label>
+            <select class="plain-form__select" id="company-type" name="company-type">
+              <option value="all" selected>Все типы</option>
+              <option value="companies">Компании</option>
+              <option value="enterpreneurs">Предприниматели</option>
+              <option value="nco">НКО</option>
+              <option value="charity">Благотворительные фонды</option>
+              <option value="state">Государственные организации</option>
+              <option value="religious">Религиозные организации</option>
+              <option value="volunteers">Волонтёры</option>
+            </select>
+            <label class="plain-form__label" for="region">Регион и город</label>
+            <select class="plain-form__select plain-form__select--region" id="region" name="region">
+              <option value="23" selected disabled>Введите регион или город</option>
+              <option value="24">Красноярский край</option>
+              <option value="25">Приморский край</option>
+              <option value="26">Ставропольский край</option>
+            </select>
+            <ul class="plain-form__chosen chosen" id="chosen-reset">
+              <li class="chosen__item">
+                <svg version="1.1" id="chosen__pic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                   width="8" height="8" viewBox="0 0 339.177 339.177" style="enable-background:new 0 0 339.177 339.177;"
+                   xml:space="preserve">
+                  <g>
+                    <path d="M247.244,169.59l83.938-83.938c5.332-5.327,7.994-11.798,7.994-19.414c0-7.614-2.669-14.084-7.994-19.414L292.355,7.993
+                      C287.026,2.665,280.556,0,272.944,0c-7.617,0-14.085,2.665-19.417,7.993L169.59,91.931L85.651,7.993
+                      C80.325,2.665,73.854,0,66.237,0c-7.611,0-14.083,2.665-19.414,7.993L7.994,46.824C2.667,52.15,0,58.624,0,66.238
+                      c0,7.616,2.664,14.084,7.994,19.414l83.937,83.938L7.994,253.528C2.667,258.859,0,265.327,0,272.945
+                      c0,7.61,2.664,14.082,7.994,19.41l38.83,38.828c5.33,5.332,11.803,7.994,19.414,7.994c7.616,0,14.084-2.669,19.414-7.994
+                      l83.939-83.938l83.944,83.938c5.328,5.332,11.793,7.994,19.417,7.994c7.611,0,14.082-2.669,19.411-7.994l38.82-38.828
+                      c5.332-5.324,7.994-11.8,7.994-19.41c0-7.618-2.662-14.086-7.994-19.417L247.244,169.59z"/>
+                  </g>
+                </svg>
+                <span class="chosen__name">Красноярский край</span>
+              </li>
+              <li class="chosen__item">
+                <svg version="1.1" id="chosen__pic" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0"
+                   width="8" height="8" viewBox="0 0 339.177 339.177" style="enable-background:new 0 0 339.177 339.177;"
+                   xml:space="preserve">
+                  <g>
+                    <path d="M247.244,169.59l83.938-83.938c5.332-5.327,7.994-11.798,7.994-19.414c0-7.614-2.669-14.084-7.994-19.414L292.355,7.993
+                      C287.026,2.665,280.556,0,272.944,0c-7.617,0-14.085,2.665-19.417,7.993L169.59,91.931L85.651,7.993
+                      C80.325,2.665,73.854,0,66.237,0c-7.611,0-14.083,2.665-19.414,7.993L7.994,46.824C2.667,52.15,0,58.624,0,66.238
+                      c0,7.616,2.664,14.084,7.994,19.414l83.937,83.938L7.994,253.528C2.667,258.859,0,265.327,0,272.945
+                      c0,7.61,2.664,14.082,7.994,19.41l38.83,38.828c5.33,5.332,11.803,7.994,19.414,7.994c7.616,0,14.084-2.669,19.414-7.994
+                      l83.939-83.938l83.944,83.938c5.328,5.332,11.793,7.994,19.417,7.994c7.611,0,14.082-2.669,19.411-7.994l38.82-38.828
+                      c5.332-5.324,7.994-11.8,7.994-19.41c0-7.618-2.662-14.086-7.994-19.417L247.244,169.59z"/>
+                  </g>
+                </svg>
+                <span class="chosen__name">Дивногорск</span>
+              </li>
+            </ul>
+            <label class="plain-form__label" for="field">Направление деятельности</label>
+            <select class="plain-form__select" id="field" name="field">
+              <option value="all">Все направления</option>
+              <option value="ecology">Экология и защита животных</option>
+              <option value="culture">Культура</option>
+              <option value="science">Наука и образование</option>
+              <option value="medicine" selected>Медицина</option>
+              <option value="sport">Спорт</option>
+              <option value="family">Дети, семья, материнство и отцовство</option>
+              <option value="disabled">Инвалиды и реабилитация</option>
+              <option value="elderly">Престарелые люди</option>
+              <option value="prisoners">Заключённые</option>
+              <option value="address">Адресная помощь</option>
+              <option value="addictions">Помощь при зависимостях</option>
+              <option value="youth">Молодёжные проекты</option>
+              <option value="history">Сохранение исторической памяти</option>
+              <option value="volunteers">Волонтёры и добровольцы</option>
+            </select>
+            <label class="plain-form__label" for="subcategory">Подкатегория направления</label>
+            <select class="plain-form__select" id="subcategory" name="subcategory">
+              <option value="all" selected>Все подкатегории</option>
+              <option value="cardio">Кардиология</option>
+              <option value="neuro">Нейрология</option>
+              <option value="onko">Онкология</option>
+            </select>
+            <div class="plain-form__buttons">
+              <button class="plain-form__submit" type="submit">Применить</button>
+              <input class="plain-form__reset" id="form-reset" type="reset" value="Очистить фильтр">
+            </div>
+          </form>
+          <!-- ............ ФИЛЬТР: конец ............ -->
+        </section>
+        <section class="mailing">
+          <h5 class="small-headline mailing__headline">Подписка</h5>
+          <!-- ............ ПОДПИСКА: начало ............ -->
+          <form class="plain-form">
+            <select class="plain-form__select" id="what-to-send" name="what-to-send">
+              <option value="all" selected>Все материалы сайта</option>
+              <option value="projects">Проекты</option>
+              <option value="news">Новости</option>
+              <option value="articles">Статьи</option>
+              <option value="reports">Отчёты</option>
+              <option value="notifications">Объявления</option>
+              <option value="events">Мероприятия</option>
+              <option value="contests">Конкурсы</option>
+            </select>
+            <input class="plain-form__input" type="email" id="email" name="email" placeholder="Электронная почта" required>
+            <!-- здесь должна быть капча -->
+            <button class="plain-form__submit" type="submit">Подписаться</button>
+          </form>
+          <!-- ............ ПОДПИСКА: конец ............ -->
+        </section>
+
+      </aside>
+    </div>
+
+    <!-- ............ ПОПАПЫ: начало ............ -->
+
+    <div class="page-overlay" id="page-overlay" style="display: none;">
+      <!-- ............ ФОРМА ВХОДА ............ -->
+      <form class="sign-in plain-form plain-popup" id="sign-ip-popup" style="display: none;">
+        <button class="plain-popup__close" id="close-popup-1" type="button"></button>
+        <div class="plain-popup__header">
+          <legend class="plain-popup__legend">Вход</legend>
+          <button class="plain-popup__toggle" id="register" type="button">Регистрация</button>
+        </div>
+        <input class="plain-popup__input plain-form__input" type="email" id="sign-in-email" name="sign-in-email" placeholder="Электронная почта" required>
+        <input class="plain-popup__input plain-form__input" type="password" id="password" name="password" placeholder="Пароль" required>
+        <button class="plain-popup__toggle" id="forgot-password" type="button">Забыли пароль?</button>
+        <button class="plain-popup__submit plain-form__submit" type="submit">Войти</button>
       </form>
-    </section>
+      <!-- ............ ФОРМА ВОССТАНОВЛЕНИЯ ПАРОЛЯ ............ -->
+      <form class="recall-password plain-form plain-popup" id="recall-password-popup" style="display: none;">
+        <button class="plain-popup__close" id="close-popup-2" type="button"></button>
+        <legend class="recall-password__legend plain-popup__legend">
+          Напомнить пароль
+        </legend>
+        <label class="recall-password__label plain-popup__label" for="password-email">Введите адрес, который вы указывали при регистрации</label>
+        <input class="recall-password__input plain-popup__input plain-form__input" type="email" id="password-email" name="password-email" placeholder="Электронная почта" required>
+        <!-- здесь должна быть капча -->
+        <button class="plain-popup__submit plain-form__submit" type="submit">Отправить</button>
+      </form>
+      <!-- ............ ФОРМА РЕГИСТРАЦИИ ............ -->
+      <form class="sign-up plain-form plain-popup" id="sign-up-popup" style="display: none;">
+        <button class="plain-popup__close" id="close-popup-3" type="button"></button>
+        <div class="plain-popup__header">
+          <legend class="plain-popup__legend">Регистрация</legend>
+          <button class="plain-popup__toggle" id="register-login" type="button">Вход</button>
+        </div>
+        <input class="plain-popup__input plain-form__input" type="email" id="sign-up-email" name="sign-up-email" placeholder="Электронная почта" required>
+        <input class="plain-popup__input plain-form__input" type="text" id="company" name="company" placeholder="Название организации" required>
+        <input class="plain-popup__input plain-form__input" type="tel" id="tel" name="tel" placeholder="Телефон организации" minlength="6" maxlength="20" required>
+        <div class="plain-popup__check">
+          <input class="plain-popup__checkbox" type="checkbox" id="info-security" name="info-security">
+          <label class="plain-popup__label" for="info-security">Я даю согласие на обработку моих персональных данных и соглашаюсь c <a href="security" target="_blank">политикой конфиденциальности</a></label>
+        </div>
+        <!-- здесь должна быть капча -->
+        <button class="plain-popup__submit plain-form__submit" type="submit">Зарегистрироваться</button>
+      </form>
+    </div>
+    <!-- ............ ПОПАПЫ: конец ............ -->
+
+    <!-- ............ СКРИПТЫ: начало ............ -->
+    <script>
+      document.getElementById("form-reset").onclick = function() {
+        document.getElementById("chosen-reset").style.display = "none";
+      }
+      document.getElementById("chosen-reset").onclick = function() {
+        document.getElementById("region").selectedIndex = 0;
+        document.getElementById("chosen-reset").style.display = "none";
+      }
+
+      var login = document.getElementById("login");
+      var overlay = document.getElementById("page-overlay");
+      var signIn = document.getElementById("sign-ip-popup");
+      var register = document.getElementById("register");
+      var forgotPassword = document.getElementById("forgot-password");
+      var recallPassword = document.getElementById("recall-password-popup");
+      var signUp = document.getElementById("sign-up-popup");
+      var registerLogin = document.getElementById("register-login");
+      var closePopup1 = document.getElementById("close-popup-1");
+      var closePopup2 = document.getElementById("close-popup-2");
+      var closePopup3 = document.getElementById("close-popup-3");
+
+      login.onclick = function() {
+        overlay.style.display = "flex";
+        signIn.style.display = "block";
+      }
+
+      register.onclick = function() {
+        overlay.style.display = "flex";
+        signIn.style.display = "none";
+        signUp.style.display = "block";
+      }
+
+      registerLogin.onclick = function() {
+        signUp.style.display = "none";
+        signIn.style.display = "block";
+      }
+
+      forgotPassword.onclick = function() {
+        overlay.style.display = "flex";
+        signIn.style.display = "none";
+        recallPassword.style.display = "block";
+      }
+
+      closePopup1.onclick = function() {
+        overlay.style.display = "none";
+        signIn.style.display = "none";
+      }
+
+      closePopup2.onclick = function() {
+        overlay.style.display = "none";
+        recallPassword.style.display = "none";
+      }
+
+      closePopup3.onclick = function() {
+        overlay.style.display = "none";
+        signUp.style.display = "none";
+      }
+    </script>
+    <!-- ............ СКРИПТЫ: конец ............ -->
 
   </body>
 
